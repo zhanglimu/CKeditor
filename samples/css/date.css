@@ -1,0 +1,180 @@
+.form-group{margin: 10px;}
+/*./././././././.*/
+#date{width: 80%;margin-left: 1.5%;}
+#date table td{float: left; padding: 0; vertical-align: middle;}
+.robot th{width: 5%;float: left;line-height: 50px;text-align: center;}
+.robot button{width: 100px; border: none;border-radius: 2px;}
+.robot img{width:25%;float: left;margin: 7px;}
+.addto{background: #FF5B00;}
+.trash{background: #8CD128;}
+.cancle{background: #999;}
+.checkbox{background: #FFB92C;
+}
+.checkbox span,.robot button span{font-size: 14px;color: #757575;font-weight: normal; color: #fff;}
+.into{width: 30%;margin-left:1.4% ;}
+.intoname{height: 40px;text-indent: 20px;border: none;border-bottom: 1px dashed #fff;background: none;}
+.into img{width:7%;}
+.into span{font-weight: bold;}
+
+
+/*时间*/
+.div_match{width: 80%;margin-left: 1.5%;}
+.match{width: 100%;}
+.match td{border: 1px solid #ddd; text-align: center;padding: 8px 0;}
+.match td img{width: 20%;padding: 2px;}
+.match .the{padding-left: 8%;}
+
+.free,.trophy{cursor: pointer; color:#27C0D8 ;}
+td[name="trash_gray"],td[name="scissors"],td[name="transfer"],td[name="faqu"]{cursor: pointer;}
+td[name="faqu"] button{width:50px; height:25px;line-height: 26px; border: none; background: #e85859;border-radius: 2px; color: #fff;}
+.sync{margin: 0; height: 30px;line-height: 25px;margin-left: 10px;color: #fff; border: none;border-radius: 2px;background: #FF5B00;}
+
+.input{color: #333;font-size: 14px;padding: 10px 0;text-align: left;margin-left: 25%;}
+.input span{font-weight: bold;width: 30%;display: inline-block;}
+.input input{margin: 0 5px;}
+.input b{float: left;margin: 15px 10px; font-weight: normal;}
+.input b span{display: inline; font-weight: normal;}
+.click{cursor: pointer;color: #737373;}
+
+.statename, #zhuname,#kename,#statename{height: 30px; border: none;border-bottom: 1px dashed #e85859;background: none;}
+
+.filter {width:80px; height:22px;background:none; border:none; text-indent: 3px;}
+.filter option{text-indent: 10px;padding: 5px;background: #fff;border-bottom: 1px solid #737373;}  
+#sleHid { display:block; width:56px; overflow:hidden; }    
+#sleBG  { width:78px; height:22px; line-height: 22px; border: 1px solid #e85859;border-radius: 6em;
+  background:url("../img/down_list.png") #fff no-repeat 62px 1px;  display:block; font-weight: normal;}
+  
+.filter1 {width:200px; height:22px;background:none; border:none; text-indent: 3px;}
+.filter1 option{text-indent: 10px;padding: 5px;background: #fff;border-bottom: 1px solid #737373;}  
+#sleHid1 { display:block; width:180px; overflow:hidden; }    
+#sleBG1  { width:210px; height:30px; line-height: 30px;text-indent: 10px; border: 1px solid #e85859;border-radius: 6em;
+  background:url("../img/down_list.png") #fff no-repeat 185px 5px;  display:block; font-weight: normal;}
+  
+.filter2 {width:150px; height:22px;background:none; border:none; text-indent: 3px;}
+.filter2 option{text-indent: 10px;padding: 5px;background: #fff;border-bottom: 1px solid #737373;}  
+#sleHid2 { display:block; width:126px; overflow:hidden; }    
+#sleBG2  {/*margin: 0 20px;*/ width:160px; height:22px; line-height: 22px;/* border: 1px solid #e85859;*/border-radius: 6em;
+  background:url("../img/down_list.png") #fff no-repeat 131px 1px;  display:block; font-weight: normal;}
+/*遮罩层*/
+.overlay{
+            background:rgba(0,0,0,0.3);
+            position:fixed;
+            top:0px;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            z-index:100;}
+.box{
+            position:fixed;
+            top:-500px;
+            left:35%;
+            right:35%;
+            background-color:#fff;
+            color:#7F7F7F;
+            padding:20px;
+            border:2px solid #e85859;
+            border-radius: 20px;
+            -moz-box-shadow: 0 1px 5px #333;
+            -webkit-box-shadow: 0 1px 5px #333;
+            z-index:101;}
+.box1{
+            position:fixed;
+            top:-1000px;
+            left:25%;
+            right:25%;
+            background-color:#fff;
+            color:#7F7F7F;
+            padding:20px;
+            border:2px solid #e85859;
+            border-radius: 20px;
+            -moz-box-shadow: 0 1px 5px #333;
+            -webkit-box-shadow: 0 1px 5px #333;
+            z-index:101;}
+.box2{
+            position:fixed;
+            top:-1000px;
+            left:15%;
+            right:15%;
+            background-color:#fff;
+            color:#7F7F7F;
+            padding:20px;
+            border:2px solid #e85859;
+            border-radius: 20px;
+            -moz-box-shadow: 0 1px 5px #333;
+            -webkit-box-shadow: 0 1px 5px #333;
+            z-index:101;}
+a.boxclose{
+                float:right;
+                width:30px;
+                height:30px;
+                background:transparent url(../img/cancle.png) repeat top left;
+                margin-top:-40px;
+                margin-right:-40px;
+                cursor:pointer;}
+.free_sure,.del_sure,.trophy_sure,.math_sure,.transfer_sure{
+    width:50px;
+    height:30px;
+    line-height:30px;
+    color:#fff;
+    background:#FF5B00;
+    border:none; 
+    border-radius:2px;
+    margin-right: 20px;
+}
+.free_cancel,.del_cancel,.trophy_cancel,.math_cancel,.transfer_cancel{
+    width:50px;
+    height:30px;
+    line-height:30px;
+    color:#fff;
+    background:#999;
+    border:none; 
+    border-radius:2px;
+    margin-left: 20px;
+}
+
+/*中超*/
+#menu_bangdan{height: 32px;}
+#menu_bangdan li{ width: 25%; border: 1px solid #ddd;border-radius: 5px; line-height:30px;
+    text-align:center;cursor:pointer;float:left;padding:0 15px;}
+li.se{border:1px #55b5ad solid;background:#FFB92C;color:#000;font-weight:bold;}
+
+.bangdan_table{text-align: center;}
+#date .bangdan_table td{ float: initial;border: 1px solid #ddd; text-align: center;padding: 8px 0;}
+.kuan{width: 20%;}
+.kuan img{width: 10%;}
+.kuan input{vertical-align: middle;}
+.bangdan_table input{border: none;vertical-align: middle;width: 80%; background:none;text-align: center;}
+
+.add_to{text-align: center;padding: 5%;cursor: pointer;}
+.compiling input{ height: 40px;text-align: center;background:rgba(192,235,239,0.5);border: 1px solid #D9D9D9;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

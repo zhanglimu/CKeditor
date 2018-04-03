@@ -1,0 +1,205 @@
+@charset "utf-8";
+/*公用*/
+*{margin:0;padding:0;}
+html body{font-size:12px; color:#000;font-family:Verdana,Arial,Helvetica,sans-serif;background:#F9F9F9;}
+.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix{zoom:1;}
+ul,li{list-style:none;}
+.left{float: left;}
+.right{float: right;}
+a{text-decoration: none;}
+i,em{font-style: normal;}
+p{padding: 0;margin: 0;}
+/*公用结束*/
+header{ height:50px;background-color:#27C0D8;color:#000} 
+.top_header{padding: 15px;}  
+.top_header a{text-decoration: none;color:#000;}
+
+
+#logo .left{margin: 10px 20px;}
+#logo span{margin: 20px;}
+#logo span input{ width:200px;height: 30px;}
+#logo span img{margin: 10px;cursor: pointer;}
+
+#project{width: 100%;  border-bottom:1px solid #ddd;}
+/*菜单*/
+#box{width:15%; height:100%;padding-bottom:500px; background:#222; text-align: center;}
+#list{ padding-top: 20px;}
+#list img{width: 10%; margin-right: 30px;}
+#box li:hover{background:#27C0D8;}
+#box li a{color: #ddd;}
+#box li{border-bottom:1px #999 solid;line-height:50px;font-size:16px; cursor:pointer;}
+#box li.select{background:#27C0D8;font-weight:bold;}
+#box li.se{background:#27C0D8;font-size:14px;font-weight:bold;}
+#box li.child{display:none;}
+#box li.child li{background:#FFF;border:1px #F9F9F9 solid;line-height:50px;text-indent:30px;}
+/*折叠*/
+.fluid{width: 20%; margin:0 1.5%;text-align: center;}
+.accordion-toggle{display: block; height: 30px; color:#000;margin:4px 0;border:1px #27C0D8 solid;}
+.accordion-toggle:hover{text-decoration: none;}
+.accordion-inner{background: rgba(0,0,0,0.5);border-bottom: 1px solid #ddd;cursor: pointer;}
+.menu_tab,.edit_tab{/*border-bottom: 3px solid #ddd;*/margin-bottom: 5px;}
+.menu_tab button,.edit_tab button{width: 15%;border: none;border-radius: 2px;}
+#League_match{width: 100%;height: 25px; line-height: 25px;background: #aae9ea;border: none;border: 1px solid #999;
+border-radius: 5px;}
+/*编辑*/
+.lr{margin: 20px 0;}
+.edit_tatle{width: 80%; float: left; margin: 2% 1.5%;margin-bottom: 5px;padding: 10px;background:#27C0D8; border-bottom:1px dashed #ddd;}
+.english{width: 100%;}
+#menu{width: 100%;}
+.color{background: rgba(0,0,0,0.3); border: none; color: #FFF;}
+#edit,#edit_new{width: 100%; background: #fff;}
+.edit_tool{width: 100%;}
+#cke_1_top{width: 100%;padding: 0;}
+#edit form,#edit_new form{width: 100%; text-align: left;}
+#edit form p,#edit_new form p{height: 50px;line-height: 50px;}
+#edit form span,#edit_new form span{display: inline-block; width: 15%;font-size: 14px;}
+#edit form input,#edit_new form input{ width: 75%; height: 45px; border: none; border-bottom:1px solid #999;}
+#edit form input.Wdate,#edit_new form input.Wdate{width: 30%; height: 30px;}
+td[name="events"]{cursor: pointer; color:#27C0D8 ;}
+.button input{ width:20%;height: 50px;line-height: 50px; margin: 20px 0; border-radius: 2px;border: none;}
+
+.form-group .Wdate{text-indent: 5px; height: 30px; border: 1px solid #e85859;border-radius: 6em;}
+.form-group p span{font-weight: bold;}
+.form-group input{text-indent: 5px; height: 30px; border: 1px solid #e85859;border-radius: 6em;}
+.robot img.indeximg{width: 65%;margin: 2px;border-radius: 6em;}
+
+footer{background: #F9F9F9; text-align: center;}
+
+#title_div{width:100%;height:30px;line-height: 30px; background: #4D4D4D;}
+#title_div input,#match{height: 30px;}
+
+.title_p{ height: 30px;}
+.hover_right{position: absolute;top: 20%;left: 25%; width: 40%;height:auto;overflow-y:hidden; border:2px solid #999;background: #fff;}
+.hover_right .title_li{height: 30px;line-height: 30px;background:#000;color: #fff;}
+/*.hover_right ul:nth-child(2n-1){background: #f2c22f;}*/
+.new{padding: 10px;}
+.hover_right ul li{padding:0 10px; border:1px solid #999;}
+.hover_right ul .first_li{height:auto; line-height: 20px;border-bottom: 1px solid #ddd; text-indent: 2em;}
+.first_li span{color: #8787c6;}
+.hover_right ul .surplus{line-height:40px;padding: 0px; border-bottom:1px solid #efd7d7;}
+.li_span{ width:30%;background:#39F;text-align: center;}
+.li_tspan{text-indent: 10px; width:60%; overflow: hidden;white-space: nowrap; text-overflow:ellipsis;}
+/*用户管理*/
+#user_table{float: left; width: 80%; margin:2% 2.5%;}
+thead td{font-size: 14px;font-weight: bold;}
+#user_table div{margin-bottom: 5px;padding: 10px;background:#27C0D8; border-bottom:1px dashed #ddd;}
+#user_table p{margin: 5px;}#user_table p img{margin-left: 20px;}
+.user_search{vertical-align: middle; height: 40px;text-align: center;border: none; background:none;border-bottom: 1px solid #27C0D8;}
+#user_table table{width: 100%; text-align: center;}
+#user_table td{line-height: 35px; border: 1px solid #D9D9D9;}
+#user_table td input{height: 30px;text-align: center;border: none;background:none;border-bottom: 1px dashed #27C0D8;}
+tbody tr:nth-child(2n-1){background: #f8e7e7;}
+button{width: 20%; margin: 5px; line-height: 40px;font-size:14px; font-weight: bold;}
+.hold{background:#27C0D8 ; border:none;border-radius: 2px;}.away{background:#FF5B00; border:none;border-radius: 2px;}
+/*阵容*/
+.news_list{height: 400px;overflow-y: auto;}
+.news_list li{display: inline-block;width: 100%; border-bottom:3px #eee solid;font-size: 16px;padding: 1%;}
+.news_list p{/*text-indent: 30px;*/font-size: 14px;padding: 2%;color: #000;}
+.news_list p span{display: inline-block;}
+.news_list img{position: relative;}
+.news_list img:hover:before{position: absolute;top: 20px;border: 1px solid #0279FF;}
+.data,.data1{cursor: pointer;}
+
+.unitba input{border: none;}
+.unitba img{width: 2%;}
+.renming{display: inline-block;width: 45%;padding: 0 5px;}
+#em{width: 15%;font-size: 10px;color: #ADADAD;}
+#small{font-size: 10px;color: #ADADAD;}
+#show textarea{width: 100% !important;background-color: #fff;border: 1px solid #B6B6B6;}
+.sbc{width: 100%;}
+.sbc li{float: left;}
+.sbc span{font-size: 14px;font-weight: bold;}
+.sbc input{border: none;display: inline-block;text-indent:30px;border-bottom:1px dashed #f76766;}
+			/*默认勾选框*/
+.explaining span{font-size: 12px;}
+.unitba{display: inline-block;width: 100%;}
+.unit li{border-bottom: 1px solid #eee; font-size: 12px;text-align: initial;}
+.unit li input{padding: 0 5px;}
+#line_red,#line_blue{ border-right: 1px solid #ADADAD;}
+#line_red{color: #e85859;width: 15%;display: inline-block;}#line_blue{color:#27C0D8 ;width: 15%;display: inline-block;}
+
+.checkboxFive input[type=checkbox],.checkboxFive1 input[type=checkbox]{visibility:hidden;margin: 0;}
+.checkboxFive ,.checkboxFive1{
+	width: 100%;
+	position: relative;
+	font-size: 16px;
+	background: rgba(232,88,89,0.2);
+}
+.checkboxFive1{background: rgba(39,192,216,0.2);}
+
+.checkboxFive label,.checkboxFive1 label {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 1;
+  left: 60%;
+	background: #eee;
+	border:1px solid #55b5ad;
+	border-radius: 6em;
+}
+.checkboxFive label:after, .checkboxFive1 label:after{
+	opacity: 0.2;
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 8px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #00f723;
+	border-top: none;
+	border-right: none;
+ 
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.checkboxFive label:hover::after,.checkboxFive1 label:hover::after {
+	opacity: 0.5;
+}
+.checkboxFive input[type=checkbox]:checked + label:after ,.checkboxFive1 input[type=checkbox]:checked + label:after{
+	opacity: 1;
+}
+/*分页*/
+#user_table .jogger{background: #F9F9F9;border-bottom: none;}
+.jogger {
+    text-align: center;padding:2px;margin: 18px 30%; FONT-FAMILY: "Lucida Sans Unicode", "Lucida Grande", LucidaGrande, "Lucida Sans", Geneva, Verdana, sans-serif
+}
+.jogger A {
+    padding:0.5em 0.64em 0.43em;margin: 2px; color: #fff;background-color: #D7D7D7;text-decoration: none
+}
+.jogger A:hover {
+    padding:0.5em 0.64em 0.43em;margin: 2px; color: #fff;background-color: #4C4C4C
+}
+.jogger A:active {
+    padding:0.5em 0.64em 0.43em;margin: 2px; color: #fff;background-color: #4C4C4C
+}
+.jogger SPAN.current {
+    padding:0.5em 0.64em 0.43em;margin: 2px; color: #fff;background-color: #4C4C4C
+}
+/*.jogger SPAN.disabled {
+    DISPLAY: none
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

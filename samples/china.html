@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor Sample</title>
+	<script src="../ckeditor.js"></script>
+	<script src="js/sample.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrapcollapse.js"></script>
+	<script type="text/javascript" src="js/date.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/samples.css">
+	<link rel="stylesheet" href="css/edit.css">
+	<link rel="stylesheet" href="css/date.css">
+		<!-- 引用控制层插件样式     传图片 -->
+<link rel="stylesheet" href="css/zyUpload.css" type="text/css">
+<!-- 引用核心层插件 -->
+<script src="js/zyFile.js"></script>
+<!-- 引用控制层插件 -->
+<script src="js/zyUpload.js"></script>
+</head>
+<body id="main">
+	<header>
+        <div class="top_header clearfix">
+            <div class="left">
+                <a>欢迎来到彩易科思</a>
+            </div>
+            <div class="right">
+                <span>手机号：<i>12345689789</i>&nbsp&nbsp&nbsp&nbsp</span>
+                <a href="sign.html">登录</a>&nbsp/&nbsp<a href="sign.html">注册</a>
+                <a href="#">&nbsp&nbsp&nbsp&nbsp【退出】</a>
+            </div>
+        </div>
+   </header>
+    <article id="project" class="clearfix">
+    	<section>
+    		<nav id="box" class="left">
+    			<img src="img/logo.png">
+		        <ul id="list">
+		            <li><a href=""><img src="img/home.png"/>首&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp页</a></li>
+		            <li><a href="back_game.html"><img src="img/game.png"/>游戏管理</a></li>
+		            <li><a href="index.html"><img src="img/edit.png"/>编辑新闻</a></li>
+		            <li class="select"><a href="china.html"><img src="img/china.png"/>中&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp超</a></li>
+		            <li class="parent"><a href="back_user.html"><img src="img/user.png"/>用户管理</a></li>
+		            <li><a href="player.html"><img src="img/players.png"/>球员管理</a></li>
+		            <li><a href="team.html"><img src="img/team.png"/>球队管理</a></li>
+		        </ul>
+		    </nav>
+		    <div class="edit_tatle">中超</div>
+		    <div id="date" style=" float: left;">
+				<div class="inner">
+				        <div class="service-wrap">
+				            <div class="main-form">
+				                <div class="table-form service-form">
+				                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-cell">
+				                        <tbody>
+				                            <tr class="robot" style="background: #c2c2c2;">
+				                                <th><span>轮次：</span></th>
+				                                <td>
+				                                    <div class="form-group float-left">
+				                                        <span id="sleBG1" class="right">   
+															<span id="sleHid1">  
+												                <select class="filter1">
+												                	<option value="1" selected="selected">1</option>
+												                	<option value="2">2</option>
+												                	<option value="3">3</option>
+												                	<option value="4">4</option>
+												                	<option value="5">5</option>
+												                	<option value="6">6</option>
+												                	<option value="7">7</option>
+												                </select>
+											                </span>   
+														</span>  
+				                                    </div>
+				                                </td>
+				                            </tr>
+				                            <tr class="robot" style="background: #c2c2c2;">
+				                                <th><span>操作：</span></th>
+				                                <td>
+				                                    <button class="addto float-left">
+				                                        <img src="img/addto.png"/>
+				                                        <span>添加</span>
+				                                    </button>
+				                                </td>
+				                                <td>
+				                                    <button class="trash float-left" id="del" onclick="del()">
+				                                        <img src="img/trash.png"/>
+				                                        <span>删除</span>
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                        </tbody>
+				                    </table>
+				                </div>
+				            </div>
+				        </div>
+				</div>
+				<div class="col-md-6">
+					<div class="compiling">
+						<p>标题：<input type="text" name="" id="" value="duangduang" /></p>
+						<div id="demo" class="demo "></div>       <!--上传图片-->
+						<div class="edit_tool">            <!--编辑-->
+							<div>
+								<div id="editor">
+									<h1>Hello world!</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="add_to"><img src="img/add_to.png"/></div>
+				</div>
+				<div class="bangdan col-md-6">
+	                <ul id="menu_bangdan">
+	                    <li>积分榜</li>
+	                    <li>射手榜</li>
+	                    <li>助攻榜</li>
+	                    <li>赛程表</li>
+	                </ul>
+	                    <div id="menu_content">
+	                        <div>
+	                            <table class="bangdan_table">
+	                            	<thead>
+	                            		<tr>
+	                            			<td>排名</td>
+											<td>球队</td>
+											<td>场次</td>
+											<td>胜</td>
+											<td>平</td>
+											<td>负</td>
+											<td>进球</td>
+											<td>失球</td>
+											<td>净胜球</td>
+		                            		<td>积分</td>
+	                            		</tr>
+	                            	</thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td>1</td>
+								        	<td class="kuan"><img src="img/Mexico.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="8"></td>
+								        	<td><input type="text" value="6"></td>
+								        	<td><input type="text" value="0"></td>
+								        	<td><input type="text" value="19"></td>
+								        	<td><input type="text" value="4"></td>
+								        	<td><input type="text" value="5"></td>
+								        	<td><input type="text" value="15"></td>
+								        	<td><input type="text" value="21"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>2</td>
+								        	<td class="kuan"><img src="img/Mexico.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="8"></td>
+								        	<td><input type="text" value="6"></td>
+								        	<td><input type="text" value="0"></td>
+								        	<td><input type="text" value="19"></td>
+								        	<td><input type="text" value="4"></td>
+								        	<td><input type="text" value="5"></td>
+								        	<td><input type="text" value="15"></td>
+								        	<td><input type="text" value="21"></td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+	                        </div>
+	                        <div>
+	                            <table class="bangdan_table">
+	                                <thead>
+	                            		<tr>
+	                            			<td>排名</td>
+											<td>球队</td>
+											<td>球员</td>
+											<td>进球数</td>
+	                            		</tr>
+	                            	</thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td>1</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>2</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>3</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>4</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>5</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>6</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+	                        </div>
+	                        <div>
+	                            <table class="bangdan_table">
+	                                <thead>
+	                            		<tr>
+		                            		<td>排名</td>
+											<td>球队</td>
+											<td>球员</td>
+											<td>助攻数</td>
+	                            		</tr>
+	                            	</thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td>1</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>2</td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="高拉特"></td>
+								        	<td><input type="text" value="5"></td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+	                        </div>
+	                        <div>
+	                            <table class="bangdan_table">
+	                                <thead>
+	                            		<tr>
+	                            			<td>上一轮</td>
+											<td>球队</td>
+											<td></td>
+											<td>下一轮</td>
+	                            		</tr>
+	                            	</thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td><input type="text" value="2015-05-05 13:05"></td>
+								        	<td class="kuan"><img src="img/Mexico.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="4:3"></td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td><input type="text" value="2015-05-05 13:05"></td>
+								        	<td class="kuan"><img src="img/Mexico.png"/><input type="text" value="广州恒大淘宝"></td>
+								        	<td><input type="text" value="4:3"></td>
+								        	<td class="kuan"><img src="img/Uruguay.png"/><input type="text" value="广州恒大淘宝"></td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+	                        </div>
+	                    </div>
+                </div>
+			</div>
+                <p>
+		    		<button class="left away">取消</button>
+		    		<button class="right hold">保存</button>
+		    	</p>
+    	</section>
+    </article>
+<footer class="container">
+    <div>客服热线：010-58815381</div>
+    <div>&copy&nbsp2014-2015&nbsp&nbspCaiex&nbspRecycle 版权所有</div>
+    <div>京ICP备15032311号</div>
+</footer>
+	
+<script>
+	initSample();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor Sample</title>
+	<script src="../ckeditor.js"></script>
+	<script src="js/sample.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrapcollapse.js"></script>
+	<script type="text/javascript" src="js/star.js"></script>
+	<script type="text/javascript" src="js/date.js"></script>
+	<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/samples.css">
+	<link rel="stylesheet" href="css/edit.css">
+	<link rel="stylesheet" href="css/date.css">
+</head>
+<script>
+$(function(){
+	$(".parent").click(function(){
+		$(this).siblings().removeClass('se');
+		$(this).addClass('se')
+		$(this).next().toggle();
+	});	
+});
+</script>
+<!-- 星星 -->
+<script type="text/javascript">
+function rate(obj,oEvent){
+var imgSrc = 'img/icon_star_1.png';
+var imgSrc_2 = 'img/icon_star_2.png';
+if(obj.rateFlag) return;
+var e = oEvent || window.event;
+var target = e.target || e.srcElement;
+var imgArray = obj.getElementsByTagName("img");
+for(var i=0;i<imgArray.length;i++){
+   imgArray[i]._num = i;
+   imgArray[i].onclick=function(){
+    if(obj.rateFlag) return;
+    // alert(this._num+1);
+    var inputid=this.parentNode.previousSibling
+    inputid.value=this._num+1;
+   }
+}
+if(target.tagName=="IMG"){
+   for(var j=0;j<imgArray.length;j++){
+    if(j<=target._num){
+     imgArray[j].src=imgSrc_2;
+    } else {
+     imgArray[j].src=imgSrc;
+    }
+    target.parentNode.onmouseout=function(){
+    var imgnum=parseInt(target.parentNode.previousSibling.value);
+        for(n=0;n<imgArray.length;n++){
+            imgArray[n].src=imgSrc;
+        }
+        for(n=0;n<imgnum;n++){
+            imgArray[n].src=imgSrc_2;
+        }
+    }
+   }
+} else {
+     return false;
+}
+};
+//全选
+function gehang(){
+    var tr=document.getElementsByTagName("tr");
+       tr[0].style.background="#00FF66";
+       tr[tr.length-1].style.background="#00FF66";
+                }
+    function xuan(type){
+        var qcheck=document.getElementsByName("checkbox");
+        if(type=="qx"){
+            for(var i=0;i<=qcheck.length;i++){
+                qcheck[i].checked=true;
+                                             }
+                      }
+            
+            if(type=="qxx"){
+            for(var i=0;i<=qcheck.length;i++){
+                 if(qcheck[i].checked){
+           qcheck[i].checked=false;
+                                     }
+                                  else{
+           qcheck[i].checked=true;
+        
+            }
+                }
+            }
+       };
+        function del(){
+            var input=document.getElementsByName("checkbox");
+            for(var i=input.length-1; i>=0;i--){
+                   if(input[i].checked==true){
+                       var td=input[i].parentNode;
+                      var tr=td.parentNode;
+                      var table=tr.parentNode;
+                      table.removeChild(tr);
+                 }
+               }
+          };
+</script>
+<body id="main">
+	<header>
+        <div class="top_header clearfix">
+            <div class="left">
+                <a>欢迎来到彩易科思</a>
+            </div>
+            <div class="right">
+                <span>手机号：<i>12345689789</i>&nbsp&nbsp&nbsp&nbsp</span>
+                <a href="sign.html">登录</a>&nbsp/&nbsp<a href="sign.html">注册</a>
+                <a href="#">&nbsp&nbsp&nbsp&nbsp【退出】</a>
+            </div>
+        </div>
+    </header>
+	<!--<nav id="logo">
+		<img class="left" src="img/logo.png">
+		<span class="right"><input type="text" value="墨尔本"><img src="img/search.png"></span>
+	</nav>-->
+    <article id="project" class="clearfix">
+    	<section>
+    		<nav id="box" class="left">
+    			<img src="img/logo.png">
+		        <ul id="list">
+		            <li><a href=""><img src="img/home.png"/>首&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp页</a></li>
+		            <li><a href="back_game.html"><img src="img/game.png"/>游戏管理</a></li>
+		            <li class=" select"><a href="index.html"><img src="img/edit.png"/>编辑新闻</a></li>
+		            <li><a href="china.html"><img src="img/china.png"/>中&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp超</a></li>
+		            <li class="parent"><a href="back_user.html"><img src="img/user.png"/>用户管理</a></li>
+		            <li><a href="player.html"><img src="img/players.png"/>球员管理</a></li>
+		            <li><a href="team.html"><img src="img/team.png"/>球队管理</a></li>
+		        </ul>
+		    </nav>
+		    <!--<div class="edit_tatle">编辑新闻</div>-->
+		    			<div class="col-md-5 left lr">
+		                	<div class="english">
+		                    	<div id="title_div">
+									<b style=" float:left;font-size:14px; color:#f9f9f9;">主队：爱尔兰&nbsp&nbsp&nbsp&nbsp</b>
+				                    <span class="left" style="color: #fff;">4-2-3-1</span>
+				                    <p class="left">
+				                        <img src="img/icon_star_2.png" title="很烂">
+				                        <img src="img/icon_star_2.png" title="一般">
+				                        <img src="img/icon_star_2.png" title="还好">
+				                        <img src="img/icon_star_1.png" title="较好">
+				                        <img src="img/icon_star_1.png" title="很好">
+				                        <span>&nbsp&nbsp&nbsp&nbsp</span>
+				                    </p>
+				                    <span class="left"><img src="img/L.png"/></span>
+				                    <span class="left"><img src="img/D.png"/></span>
+				                    <span class="left"><img src="img/W.png"/></span>
+				                    <span class="left"><img src="img/L.png"/></span>
+				                    <span class="left"><img src="img/L.png"/></span>
+								</div>
+								<div id="show">
+									<textarea name="" rows="10" cols="104" readonly="readonly" disabled="disabled"></textarea>
+								</div>
+                    		</div>
+	                    	<div id="menu" class="">
+								<div class="menu_tab" style="border-radius: 2px; font-size:16px;color: #595959; background:#27C0D8;">
+									<button>主队</button>
+									<button>客队</button>
+									<button>阵容编辑</button>
+									<button>赛后报告</button>
+								</div>
+							</div>
+					    	<div id="edit" class="">
+								<div class="edit_tab">
+									<form>
+										<p><span>最后更新时间:</span><em>2016-09-22 11:15:48</em></p>
+										<p><span>停赛：</span><em>很深刻的话费开始就恢复健康卡</em></p>
+										<p><span>伤停：</span><em>国防建设费时间</em></p>
+										<p><span>怀疑伤停：</span><em>健身房和电视剧发生的</em></p>
+									</form>
+								</div>
+								<div class="edit_tab">
+									<form>
+										<p><span>最后更新时间:</span><em>2016-09-22 11:15:48</em></p>
+										<p><span>停赛：</span><em>很就恢复健康卡</em></p>
+										<p><span>伤停：</span><em>jjhhhh</em></p>
+										<p><span>怀疑伤停：</span><em>健身房和电视剧发生的</em></p>
+									</form>
+								</div>
+								<div class="edit_tab">
+									<ul class="news_list">
+										<li>
+											<p>
+												<span>主队更新时间:</span><em>2016-09-22 11:15:48</em></br>
+												<span>客队更新时间:</span><em>2016-09-22 11:15:48</em>
+											</p>
+										</li>
+		                        		<li class="unitba">
+			                        		<ul class="col-md-6 unit">
+				                                <li class="checkboxFive">
+					                        		<b>主队首发阵容</b>
+					                        		<input type="checkbox" name="" id="checkboxFiveInput" value="主队阵容" />
+					                        		<label for="checkboxFiveInput"></label>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">18</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+				                            </ul>
+				                            <ul class="col-md-6 unit">
+				                                <li class="checkboxFive1">
+					                        		<b>客队首发阵容</b>
+					                        		<input type="checkbox" name="" id="checkboxFiveInput1" value="客队阵容" />
+					                        		<label for="checkboxFiveInput1"></label>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">7</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+				                            </ul>
+			                        	</li>
+			                        	<li class="unitba">
+			                        		<ul class="col-md-6 unit">
+				                                <li class="checkboxFive">
+					                        		<b>主队替补阵容</b>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">6</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">6</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">6</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">6</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">6</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">6</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_red">6</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+				                            </ul>
+				                            <ul class="col-md-6 unit">
+				                                <li class="checkboxFive1">
+					                        		<b>客队替补阵容</b>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">15</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">15</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">15</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">15</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">15</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">15</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+					                        	<li>
+					                        		<span id="line_blue">15</span>
+					                        		<span class="renming">基祖华克</span>
+					                        		<span id="small">中场</span>
+					                        	</li>
+				                            </ul>
+			                        	</li>
+	                            </ul>
+								</div>
+								<div class="edit_tab">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5 right lr">
+		                	<div>
+		                    	<div id="title_div">
+									<b style=" float:left;font-size:14px; color:#f9f9f9;">主队：爱尔兰&nbsp&nbsp&nbsp&nbsp</b>
+				                    <input type="hidden" value="0">
+				                    <input class="left" type="text"value="4-2-3-1"/>
+				                    <p class="left" onmouseover="rate(this,event)">
+				                        <img src="img/icon_star_1.png" title="很烂">
+				                        <img src="img/icon_star_1.png" title="一般">
+				                        <img src="img/icon_star_1.png" title="还好">
+				                        <img src="img/icon_star_1.png" title="较好">
+				                        <img src="img/icon_star_1.png" title="很好">
+				                        <span>&nbsp&nbsp&nbsp&nbsp</span>
+				                    </p>
+				                    <select id="match" name="match" class="left">
+				                        <option value="end" selected="selected">L</option>
+				                        <option value="end" selected="selected">W</option>
+				                        <option value="end" selected="selected">D</option>
+				                    </select>
+				                    <span class="left">&nbsp&nbsp</span>
+				                    <select id="match" name="match" class="left">
+				                        <option value="end" selected="selected">L</option>
+				                        <option value="end" selected="selected">W</option>
+				                        <option value="end" selected="selected">D</option>
+				                    </select>
+				                    <span class="left">&nbsp&nbsp</span>
+				                    <select id="match" name="match" class="left">
+				                        <option value="end" selected="selected">L</option>
+				                        <option value="end" selected="selected">W</option>
+				                        <option value="end" selected="selected">D</option>
+				                    </select>
+				                    <span class="left">&nbsp&nbsp</span>
+				                    <select id="match" name="match" class="left">
+				                        <option value="end" selected="selected">L</option>
+				                        <option value="end" selected="selected">W</option>
+				                        <option value="end" selected="selected">D</option>
+				                    </select>
+				                    <span class="left">&nbsp&nbsp</span>
+				                    <select id="match" name="match" class="left">
+				                        <option value="end" selected="selected">L</option>
+				                        <option value="end" selected="selected">W</option>
+				                        <option value="end" selected="selected">D</option>
+				                    </select>
+								</div>
+								<div class="edit_tool">
+									<div>
+										<div id="editor">
+											<h1>Hello world!</h1>
+										</div>
+									</div>
+								</div>
+                    		</div>
+	                    	<div id="menu" class="">
+								<div class="edit_tab" style="border-radius: 2px; font-size:16px;color: #595959; background:#27C0D8;">
+									<button>主队</button>
+									<button>客队</button>
+									<button>阵容编辑</button>
+									<button>赛后报告</button>
+									<button>操盘编辑</button>
+								</div>
+							</div>
+					    	<div id="edit_new" class="">
+								<div class="edit_tab">
+									<form>
+										<p><span>最后更新时间:</span><input type="text" class="Wdate" onfocus="WdatePicker({lang:'zh-ch',dateFmt:'yyyy-MM-dd HH:mm:ss'})" /></p>
+										<p><span>停赛：</span><input type="text" value="fgdfdg"></p>
+										<p><span>伤停：</span><input type="text" value="身高多少广"></p>
+										<p><span>怀疑伤停：</span><input type="text" value="123"></p>
+									</form>
+									<div class="button">
+										<input class="left" type="submit" value="提交" style="background:#FF5B00;color:#fff;font-size:16px;margin: 10px 20px;">
+										<input class="left" type="button" value="暂存" style="background:#27C0D8;color:#fff;font-size:16px;margin: 10px 20px;">
+										<input class="right" type="button" value="恢复当前" style="background: #e85859;color:#fff;font-size:16px;margin: 10px 20px;">
+									</div>
+								</div>
+								<div class="edit_tab">
+									<form>
+										<p><span>最后更新时间:</span><input type="text" class="Wdate" onfocus="WdatePicker({lang:'zh-ch',dateFmt:'yyyy-MM-dd HH:mm:ss'})" /></p>
+										<p><span>停赛：</span><input type="text" value="fkfbsafhafhjksajsahfsahf"></p>
+										<p><span>伤停：</span><input type="text" value="身高多djgfjgfjs少广"></p>
+										<p><span>怀疑伤停：</span><input type="text" value="123"></p>
+									</form>
+									<div class="button">
+										<input class="left" type="submit" value="提交" style="background:#FF5B00;color:#fff;font-size:16px;margin: 10px 20px;">
+										<input class="left" type="button" value="暂存" style="background:#27C0D8;color:#fff;font-size:16px;margin: 10px 20px;">
+								        <input class="right" type="button" value="恢复当前" style="background: #e85859;color:#fff;font-size:16px;margin: 10px 20px;">
+									</div>
+								</div>
+								<div class="edit_tab">
+									<ul class="news_list">
+										<li>
+											<p>
+												<span>主队更新时间:</span><input type="text" class="Wdate" onfocus="WdatePicker({lang:'zh-ch',dateFmt:'yyyy-MM-dd HH:mm:ss'})" /></br>
+												<span>客队更新时间:</span><input type="text" class="Wdate" onfocus="WdatePicker({lang:'zh-ch',dateFmt:'yyyy-MM-dd HH:mm:ss'})" /></br>
+												<button class="sync">同步</button>
+											</p>
+											
+										</li>
+		                        		<li class="unitba">
+			                        		<ul class="col-md-6 unit">
+				                                <li class="checkboxFive">
+					                        		<b>主队首发阵容</b>
+					                        		<input type="checkbox" name="" id="checkboxFiveInput" value="主队阵容" />
+					                        		<label for="checkboxFiveInput"></label>
+					                        	</li>
+					                        	<li>
+					                        		<input class="left" type="text" name="" id="line_red" value="18" />
+					                        		<span id="sleBG2" class="left">   
+														<span id="sleHid2">  
+													        <select class="filter2">
+													            <option value="埃斯库德罗" selected="selected">埃斯库德罗</option>
+													            <option value="基祖华克">基祖华克</option>
+													            <option value="塞巴斯蒂安">塞巴斯蒂安</option>
+													            <option value="塞尔吉奥">塞尔吉奥</option>
+													            <option value="埃斯库德罗">埃斯库德罗</option>
+													            <option value="埃斯库德罗">埃斯库德罗</option>
+													        </select>
+												        </span>   
+													</span>
+					                        		<input class="left" type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="4" />
+					                        		<input type="text" name="" id="" value="基祖华克" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞巴斯蒂安" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="4" />
+					                        		<input type="text" name="" id="" value="基祖华克" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞巴斯蒂安" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="4" />
+					                        		<input type="text" name="" id="" value="基祖华克" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+				                            </ul>
+				                            <ul class="col-md-6 unit">
+				                                <li class="checkboxFive1">
+					                        		<b>客队首发阵容</b>
+					                        		<input type="checkbox" name="" id="checkboxFiveInput1" value="客队阵容" />
+					                        		<label for="checkboxFiveInput1"></label>
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+				                            </ul>
+			                        	</li>
+			                        	<li class="unitba">
+			                        		<ul class="col-md-6 unit">
+				                                <li class="checkboxFive">
+					                        		<b>主队替补阵容</b>
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="4" />
+					                        		<input type="text" name="" id="" value="基祖华克" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞巴斯蒂安" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="1" />
+					                        		<input type="text" name="" id="" value="塞巴斯蒂安" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_red" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+				                            </ul>
+				                            <ul class="col-md-6 unit">
+				                                <li class="checkboxFive1">
+					                        		<b>客队替补阵容</b>
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="4" />
+					                        		<input type="text" name="" id="" value="基祖华克" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞尔吉奥" />
+					                        		<input type="text" name="" id="em" value="" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞巴斯蒂安" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="1" />
+					                        		<input type="text" name="" id="" value="塞巴斯蒂安" />
+					                        		<input type="text" name="" id="em" value="中场" />
+					                        	</li>
+					                        	<li>
+					                        		<input type="text" name="" id="line_blue" value="18" />
+					                        		<input type="text" name="" id="" value="埃斯库德罗" />
+					                        		<input type="text" name="" id="em" value="后卫" />
+					                        	</li>
+				                            </ul>
+			                        	</li>
+	                            	</ul>
+									<div class="button">
+										<input class="left" type="submit" value="提交" style="background:#FF5B00;color:#fff;font-size:16px;margin: 10px 20px;">
+										<input class="left" type="button" value="暂存" style="background:#27C0D8;color:#fff;font-size:16px;margin: 10px 20px;">
+								        <input class="right" type="button" value="恢复当前" style="background: #e85859;color:#fff;font-size:16px;margin: 10px 20px;">
+									</div>
+								</div>
+								<div class="edit_tab">
+									<div class="button">
+										<input class="left" type="submit" value="提交" style="background:#FF5B00;color:#fff;font-size:16px;margin: 10px 20px;">
+										<input class="left" type="button" value="暂存" style="background:#27C0D8;color:#fff;font-size:16px;margin: 10px 20px;">
+								        <input class="right" type="button" value="恢复当前" style="background: #e85859;color:#fff;font-size:16px;margin: 10px 20px;">
+									</div>
+								</div>
+								<div class="edit_tab">
+									<ul class="sbc clearfix">
+										<li><span>SUP:</span><input type="text" name="" value="0.00" /></li>
+										<li><span>TTG:</span><input type="text" name="" value="0.00" /></li>
+										<li><span>Draw Adjustment:</span><input type="text" name="" value="0.0" /></li>
+										<li><span>Draw:</span><input type="text" name="" value="0.0" /></li>
+									</ul>
+									<div class="button">
+										<input class="left" type="submit" value="提交" style="background:#FF5B00;color:#fff;font-size:16px;margin: 10px 20px;">
+										<input class="left" type="button" value="暂存" style="background:#27C0D8;color:#fff;font-size:16px;margin: 10px 20px;">
+								        <input class="right" type="button" value="恢复当前" style="background: #e85859;color:#fff;font-size:16px;margin: 10px 20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+    	</section>    
+    </article>
+<footer class="container">
+    <div>客服热线：010-58815381</div>
+    <div>&copy&nbsp2014-2015&nbsp&nbspCaiex&nbspRecycle 版权所有</div>
+    <div>京ICP备15032311号</div>
+</footer>
+<script>
+	initSample("editor");
+</script>
+</body>
+</html>

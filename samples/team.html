@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor Sample</title>
+	<script src="../ckeditor.js"></script>
+	<script src="js/sample.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrapcollapse.js"></script>
+	<script type="text/javascript" src="js/date.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/samples.css">
+	<link rel="stylesheet" href="css/edit.css">
+	<link rel="stylesheet" href="css/date.css">
+</head>
+<script type="text/javascript">
+
+//全选
+function gehang(){
+    var tr=document.getElementsByTagName("tr");
+       tr[0].style.background="#00FF66";
+       tr[tr.length-1].style.background="#00FF66";
+                }
+    function xuan(type){
+        var qcheck=document.getElementsByName("checkbox");
+        if(type=="qx"){
+            for(var i=0;i<=qcheck.length;i++){
+                qcheck[i].checked=true;
+                                             }
+                      }
+            
+            if(type=="qxx"){
+            for(var i=0;i<=qcheck.length;i++){
+                 if(qcheck[i].checked){
+           qcheck[i].checked=false;
+                                     }
+                                  else{
+           qcheck[i].checked=true;
+        
+            }
+                }
+            }
+       };
+        function del(){
+            var input=document.getElementsByName("checkbox");
+            for(var i=input.length-1; i>=0;i--){
+                   if(input[i].checked==true){
+                       var td=input[i].parentNode;
+                      var tr=td.parentNode;
+                      var table=tr.parentNode;
+                      table.removeChild(tr);
+                 }
+               
+                }
+       
+           };
+</script>
+<body id="main">
+	<header>
+        <div class="top_header clearfix">
+            <div class="left">
+                <a>欢迎来到彩易科思</a>
+            </div>
+            <div class="right">
+                <span>手机号：<i>12345689789</i>&nbsp&nbsp&nbsp&nbsp</span>
+                <a href="sign.html">登录</a>&nbsp/&nbsp<a href="sign.html">注册</a>
+                <a href="#">&nbsp&nbsp&nbsp&nbsp【退出】</a>
+            </div>
+        </div>
+   </header>
+    <article id="project" class="clearfix">
+    	<section>
+    		<nav id="box" class="left">
+    			<img src="img/logo.png">
+		        <ul id="list">
+		            <li><a href=""><img src="img/home.png"/>首&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp页</a></li>
+		            <li><a href="back_game.html"><img src="img/game.png"/>游戏管理</a></li>
+		            <li><a href="index.html"><img src="img/edit.png"/>编辑新闻</a></li>
+		            <li><a href="china.html"><img src="img/china.png"/>中&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp超</a></li>
+		            <li class="parent"><a href="back_user.html"><img src="img/user.png"/>用户管理</a></li>
+		            <li><a href="player.html"><img src="img/players.png"/>球员管理</a></li>
+		            <li class="select"><a href="team.html"><img src="img/team.png"/>球队管理</a></li>
+		        </ul>
+		    </nav>
+		    <div>
+		        <div class="edit_tatle">球员管理</div>
+			    <div id="date" style=" float: left;">
+				    <div class="inner">
+				        <div class="service-wrap">
+				            <div class="main-form">
+				                <div class="table-form service-form">
+				                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-cell">
+				                        <tbody>
+				                            <tr class="robot" style="background: #c2c2c2;">
+				                                <td class="into">
+				                                	<p class="left"><span>球队:</span><input type="text" class="intoname" id="" value="巴塞罗那" /></p>
+				                                	<p class="left"><span>所属国家:</span><input type="text" class="intoname" id="" value="桑切斯" /></p>
+				                                    <img class="left" src="img/search.png"/>
+				                                </td>
+				                            </tr>
+				                            <tr class="robot" style="background: #c2c2c2;">
+				                                <th><span>操作：</span></th>
+				                                <td>
+				                                	<button class="checkbox float-left" id="qx" onclick="xuan('qx')">
+				                                        <span>全选</span>
+				                                    </button>
+				                                </td>
+				                                <td>
+				                                    <button class="cancle float-left" id="qxx" onclick="xuan('qxx')">
+				                                        <span>取消全选</span>
+				                                    </button>
+				                                </td>
+				                                <td>
+				                                    <button class="addto float-left">
+				                                        <img src="img/addto.png"/>
+				                                        <span>添加</span>
+				                                    </button>
+				                                </td>
+				                                <td>
+				                                    <button class="trash float-left" id="del" onclick="del()">
+				                                        <img src="img/trash.png"/>
+				                                        <span>删除</span>
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                        </tbody>
+				                    </table>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<!--时间结束-->
+				<div class="div_match left" onload="gehang()">
+					<table class="match">
+						<thead>
+							<tr>
+								<td></td>
+								<td>编号</td>
+								<td>球队</td>
+								<td>英文名字</td>
+								<td>所属国家</td>
+								<td>队徽</td>
+								<td>上传队徽</td>
+								<td colspan="2">操作</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" name="checkbox" id="" value="" /></td>
+								<td>001</td>
+								<td>阿森纳</td>
+								<td>Sanchez</td>
+								<td>阿森纳</td>
+								<td><img src="img/Mexico.png" style="width:5%;" /></td>
+								<td class="the"><input type="file" id="" /></td>
+								<td name="scissors"><img src="img/scissors.png"/></td>
+								<td name="trash_gray"><img src="img/trash_gray.png"/></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="checkbox" id="" value="" /></td>
+								<td>001</td>
+								<td>阿森纳</td>
+								<td>Sanchez</td>
+								<td>阿森纳</td>
+								<td><img src="img/Mexico.png" style="width:5%;" /></td>
+								<td class="the"><input type="file" id="" /></td>
+								<td name="scissors"><img src="img/scissors.png"/></td>
+								<td name="trash_gray"><img src="img/trash_gray.png"/></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="checkbox" id="" value="" /></td>
+								<td>001</td>
+								<td>阿森纳</td>
+								<td>Sanchez</td>
+								<td>阿森纳</td>
+								<td><img src="img/Mexico.png" style="width:5%;" /></td>
+								<td class="the"><input type="file" id="" /></td>
+								<td name="scissors"><img src="img/scissors.png"/></td>
+								<td name="trash_gray"><img src="img/trash_gray.png"/></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="checkbox" id="" value="" /></td>
+								<td>001</td>
+								<td>阿森纳</td>
+								<td>Sanchez</td>
+								<td>阿森纳</td>
+								<td><img src="img/Mexico.png" style="width:5%;" /></td>
+								<td class="the"><input type="file" id="" /></td>
+								<td name="scissors"><img src="img/scissors.png"/></td>
+								<td name="trash_gray"><img src="img/trash_gray.png"/></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="jogger left">
+	                <a href="#"> < </a>
+	                <span class="current">1</span>
+	                <a href="#">2</a>
+	                <a href="#">3</a>
+	                <a href="#">4</a>
+	                <a href="#">5</a>
+	                <a href="#">6</a>
+	                <a href="#">7</a>...
+	                <a href="#">20</a>
+	                <a href="#"> > </a>
+	            </div>
+			</div>
+    	</section>
+    </article>
+<footer class="container">
+    <div>客服热线：010-58815381</div>
+    <div>&copy&nbsp2014-2015&nbsp&nbspCaiex&nbspRecycle 版权所有</div>
+    <div>京ICP备15032311号</div>
+</footer>
+	<!--弹出框-->
+	<div id="page-wrap">
+        <div id="content-wrap">     
+            <div id="content-left" class="demo">
+                <div class="overlay" id="del_overlay" style="display:none;"></div>
+                <div class="box" id="del_box" style="text-align:center;">
+                    <a class="boxclose" id="del_boxclose"></a>
+                    <p style="padding:15px; font-size:20px;color:#000;">您确定要删除么T_T</p>
+                    <p style="padding:20px;">
+                        <button class="del_sure">确定</button>
+                        <button class="del_cancel">取消</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加队员-->
+    <div id="page-wrap">
+        <div id="content-wrap">     
+            <div id="content-left" class="demo">
+                <div class="overlay" id="math_overlay" style="display:none;"></div>
+                <div class="box1" id="math_box" style="text-align:center;">
+                    <a class="boxclose" id="math_boxclose"></a>
+                    <p style="padding:8px;border-radius: 2px; font-size:16px;color: #595959; background:#27C0D8;">
+                    	<span>添加</span>
+                    </p>
+                    <p class="input">
+                    	<span>球队:</span>
+                    	<input type="text" name="" id="" class="statename" value="桑切斯" />
+                    </p>
+                    <p class="input">
+                    	<span>英文名字:</span>
+                    	<input type="text" name="" id="" class="statename" value="Sanchez" />
+                    </p>
+                    <p class="input">
+                    	<span>所属国家:</span>
+                    	<input type="text" name="" id="" class="statename" value="185cm" />
+                    </p>
+                    <p class="input">
+                    	<span>队徽:</span>
+                    	<input type="text" name="" id="" class="statename" value="163" />
+                    </p>
+                    <p style="padding:20px;">
+                        <button class="math_sure">保存</button>
+                        <button class="math_cancel">取消</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+	initSample();
+</script>
+
+</body>
+</html>
